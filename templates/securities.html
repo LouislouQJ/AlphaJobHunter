@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} 券商 {% endblock %}
+{% block content %}
+    <header class="intro-header" style="background-image: url('/static/img/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        券商
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% for entity in entities %}
+<div class="row">
+<div class="col-sm-1" >{{entity.date.strftime("%Y-%m-%d")}}</div>
+<div class="col-sm-9" ><a href={{entity.url}} target="_blank">{{entity.firms}}</a></div><br>    
+</div>
+{% endfor %}
+<div align='right'><a href="/" class="btn btn-primary" role="button">返回</a></div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% for crawler in crawlers %}
+<h1>{{crawler.__class__.__name__}}<br></h1>
+{% for item in crawler.news_list %}
+<center><a href={{item.url}}, target="_blank">{{item.date.strftime("%Y-%m-%d")}},{{item.title}},{{item.source}}</a><br></center>
+{% endfor %}
+{% endfor %}

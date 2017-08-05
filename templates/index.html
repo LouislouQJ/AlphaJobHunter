@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/static/img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Alpha Job Hunter 2.0</h1>
+                        <hr class="small">
+                        <span class="subheading">收集过去30日内实习信息。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>券商</h3>
+        {% for entity in securities %}
+        <a href={{entity.url}} target="_blank">{{entity.firms}}</a><br>    
+        {% endfor %}    
+    </div>
+    <div class="col-sm-4">
+      <h3>基金</h3>
+        {% for entity in funds %}
+        <a href={{entity.url}} target="_blank">{{entity.firms}}</a><br>    
+        {% endfor %}
+    </div>
+    <div class="col-sm-4">
+      <h3>银行</h3>
+        {% for entity in banks %}
+        <a href={{entity.url}} target="_blank">{{entity.firms}}</a><br>    
+        {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+        <div align='right'><a href="/securities" class="btn btn-primary" role="button">更多</a></div>       
+    </div>
+    <div class="col-sm-4">
+        <div align='right'><a href="/funds" class="btn btn-primary" role="button">更多</a></div>
+    </div>
+    <div class="col-sm-4">
+        <div align='right'><a href="/banks" class="btn btn-primary" role="button">更多</a></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
